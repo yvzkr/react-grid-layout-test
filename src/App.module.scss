@@ -1,0 +1,61 @@
+@mixin resize-handle-active() {
+  background-color: var(--mantine-color-blue-5);
+  color: var(--mantine-color-white);
+}
+
+:global {
+  .react-grid-placeholder {
+    background-color: var(--mantine-color-blue-4) !important;
+  }
+
+  .react-grid-item {
+    .react-resizable-handle {
+      &:hover {
+        @include resize-handle-active();
+      }
+    }
+
+    &.resizing {
+      .react-resizable-handle {
+        @include resize-handle-active();
+      }
+    }
+  }
+}
+
+.gridLayout {
+  background: var(--mantine-color-gray-3);
+}
+
+.gridItem {
+  background-color: var(--mantine-color-gray-2);
+  border: 1px solid transparent;
+  border-radius: var(--mantine-radius-sm);
+  padding: 20px;
+
+  &:hover {
+    border-color: var(--mantine-color-blue-5);
+  }
+
+  :global {
+    .react-resizable-handle {
+      background-image: none;
+      padding: 0;
+
+      &.react-resizable-handle-se {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.gridItemContent {
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
