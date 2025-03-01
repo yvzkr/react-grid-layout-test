@@ -3,6 +3,7 @@ import '@mantine/core/styles.css';
 import { FC, useEffect, useRef, useState } from 'react';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import { DivEffect } from './components/DivEffect/DivEffect';
 import { GridExample } from './components/GridExample/GridExample';
 import { ReactGrid } from './components/ReactGrid';
 
@@ -29,6 +30,7 @@ export const App: FC = () => {
         <Tabs.List>
           <Tabs.Tab value="reactGrid">ReactGrid</Tabs.Tab>
           <Tabs.Tab value="grid">Grid</Tabs.Tab>
+          <Tabs.Tab value="divEffect">Div Effect</Tabs.Tab>
         </Tabs.List>
 
         <Tabs.Panel value="reactGrid">
@@ -37,6 +39,10 @@ export const App: FC = () => {
 
         <Tabs.Panel value="grid">
           <GridExample />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="divEffect">
+          <DivEffect />
         </Tabs.Panel>
       </Tabs>
       <Title>{width}</Title>
