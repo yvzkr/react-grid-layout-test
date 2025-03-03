@@ -5,6 +5,7 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import { DivEffect } from './components/DivEffect/DivEffect';
 import { GridExample } from './components/GridExample/GridExample';
+import { JsonFileLanguageEditor } from './components/JsonFileLanguageEditor/JsonFileLanguageEditor';
 import { ReactGrid } from './components/ReactGrid';
 
 export const App: FC = () => {
@@ -26,12 +27,17 @@ export const App: FC = () => {
 
   return (
     <MantineProvider withCssVariables>
-      <Tabs defaultValue="reactGrid">
+      <Tabs defaultValue="jsonFileLanguageEditor">
         <Tabs.List>
+          <Tabs.Tab value="jsonFileLanguageEditor">Json File Language</Tabs.Tab>
           <Tabs.Tab value="reactGrid">ReactGrid</Tabs.Tab>
           <Tabs.Tab value="grid">Grid</Tabs.Tab>
           <Tabs.Tab value="divEffect">Div Effect</Tabs.Tab>
         </Tabs.List>
+
+        <Tabs.Panel value="jsonFileLanguageEditor">
+          <JsonFileLanguageEditor />
+        </Tabs.Panel>
 
         <Tabs.Panel value="reactGrid">
           <ReactGrid />
